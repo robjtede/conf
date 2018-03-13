@@ -1,5 +1,5 @@
 {
-	"name": "conf",
+	"name": "@robjtede/conf",
 	"version": "1.4.0",
 	"description": "Simple config handling for your app or module",
 	"license": "MIT",
@@ -41,7 +41,6 @@
 		"dot-prop": "^4.1.0",
 		"env-paths": "^1.0.0",
 		"make-dir": "^1.0.0",
-		"pkg-up": "^2.0.0",
 		"write-file-atomic": "^2.3.0"
 	},
 	"devDependencies": {

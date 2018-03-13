@@ -6,24 +6,16 @@ const assert = require('assert');
 const EventEmitter = require('events');
 const dotProp = require('dot-prop');
 const makeDir = require('make-dir');
-const pkgUp = require('pkg-up');
 const envPaths = require('env-paths');
 const writeFileAtomic = require('write-file-atomic');
 
 const obj = () => Object.create(null);
 
-// Prevent caching of this module so module.parent is always accurate
-delete require.cache[__filename];
-const parentDir = path.dirname((module.parent && module.parent.filename) || '.');
-
 class Conf {
 	constructor(opts) {
-		const pkgPath = pkgUp.sync(parentDir);
 
 		opts = Object.assign({
-			// Can't use `require` because of Webpack being annoying:
-			// https://github.com/webpack/webpack/issues/196
-			projectName: pkgPath && JSON.parse(fs.readFileSync(pkgPath, 'utf8')).name
+			projectName: opts.name
 		}, opts);
 
 		if (!opts.projectName && !opts.cwd) {
