@@ -1,6 +1,6 @@
 {
 	"name": "@robjtede/conf",
-	"version": "1.4.0",
+	"version": "1.4.1",
 	"description": "Simple config handling for your app or module",
 	"license": "MIT",
 	"repository": "sindresorhus/conf",
